@@ -22,16 +22,15 @@ export class Listacontactos {
     return agendaString;
   }
   eliminarContactos() {
+    let i = 0;
     let currentContact = this.objetocontacto.objetocola.dequeue();
     console.log("Primer contacto a eliminar:", currentContact);
-    while (currentContact != null) {
-      // Intenta avanzar al siguiente contacto en la cola
+    while (currentContact != null && i < 10000) {
       currentContact = this.objetocontacto.objetocola.dequeue();
       if (currentContact != null) {
         console.log("Siguiente contacto a eliminar:", currentContact);
-      } else {
-        break;
       }
+      i++;
     }
   }
 }
